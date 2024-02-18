@@ -1,8 +1,8 @@
-import { ConfigService } from '@nestjs/config'
-import { JwtModuleOptions } from "@nestjs/jwt";
+import { ConfigService } from "@nestjs/config"
+import { JwtModuleOptions } from "@nestjs/jwt"
 
-export const getJwtConfig = async  (
-    configServise: ConfigService
+export const getJwtConfig = async (
+	configServise: ConfigService,
 ): Promise<JwtModuleOptions> => ({
-    secret: configServise.get('JWT_SECRET')
+	secret: configServise.get("JWT_SECRET"),
 })
