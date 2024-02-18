@@ -41,27 +41,27 @@ export class AuthController {
 		return this.authService.register(dto)
 	}
 
-  @HttpCode(200)
-  @Post('login/access-token')
-  async getNewToken(
-    @Req() req: Request,
-    @Res({passthrough: true}) res: Response
-  ) {
-    const refreshTokenFromCookies =
-      req.cookies[this.authService.REFRESH_TOKEN_NAME]
+	@HttpCode(200)
+	@Post("login/access-token")
+	async getNewToken(
+		@Req() req: Request,
+		@Res({ passthrough: true }) res: Response,
+	) {
+		const refreshTokenFromCookies =
+			req.cookies[this.authService.REFRESH_TOKEN_NAME]
 
-    if (!refreshTokenFromCookies) {
-      this.authService.removeRefreshTokenToResponce(res)
-      throw new UnauthorizedException('Refresh token not passed')
-    }
+		if (!refreshTokenFromCookies) {
+			this.authService.removeRefreshTokenToResponce(res)
+			throw new UnauthorizedException("Refresh token not passed")
+		}
 
-    const {refreshToken, ...responce} = await this.authService.getNewTokens(
-      refreshTokenFromCookies
-    )
-    this.authService.addRefreshTokenToResponce(res, refreshToken)
+		const { refreshToken, ...responce } = await this.authService.getNewTokens(
+			refreshTokenFromCookies,
+		)
+		this.authService.addRefreshTokenToResponce(res, refreshToken)
 
-    return responce
-  }
+		return responce
+	}
 
 	@HttpCode(200)
 	@Post("logout")
