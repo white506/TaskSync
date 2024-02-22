@@ -19,7 +19,7 @@ model User {
   name     String?
   password String
 
-  Task            Task[]
+  tasks            Task[]
   UserPomadoro    UserPomodoro[]
   TimeBlock       TimeBlock[]
   PomodoroSession PomodoroSession[]

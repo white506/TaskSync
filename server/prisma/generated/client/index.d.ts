@@ -1284,14 +1284,14 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    Task: number
+    tasks: number
     UserPomadoro: number
     TimeBlock: number
     PomodoroSession: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Task?: boolean | UserCountOutputTypeCountTaskArgs
+    tasks?: boolean | UserCountOutputTypeCountTasksArgs
     UserPomadoro?: boolean | UserCountOutputTypeCountUserPomadoroArgs
     TimeBlock?: boolean | UserCountOutputTypeCountTimeBlockArgs
     PomodoroSession?: boolean | UserCountOutputTypeCountPomodoroSessionArgs
@@ -1313,7 +1313,7 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountTaskArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserCountOutputTypeCountTasksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: TaskWhereInput
   }
 
@@ -1553,7 +1553,7 @@ export namespace Prisma {
     email?: boolean
     name?: boolean
     password?: boolean
-    Task?: boolean | User$TaskArgs<ExtArgs>
+    tasks?: boolean | User$tasksArgs<ExtArgs>
     UserPomadoro?: boolean | User$UserPomadoroArgs<ExtArgs>
     TimeBlock?: boolean | User$TimeBlockArgs<ExtArgs>
     PomodoroSession?: boolean | User$PomodoroSessionArgs<ExtArgs>
@@ -1570,7 +1570,7 @@ export namespace Prisma {
   }
 
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Task?: boolean | User$TaskArgs<ExtArgs>
+    tasks?: boolean | User$tasksArgs<ExtArgs>
     UserPomadoro?: boolean | User$UserPomadoroArgs<ExtArgs>
     TimeBlock?: boolean | User$TimeBlockArgs<ExtArgs>
     PomodoroSession?: boolean | User$PomodoroSessionArgs<ExtArgs>
@@ -1581,7 +1581,7 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      Task: Prisma.$TaskPayload<ExtArgs>[]
+      tasks: Prisma.$TaskPayload<ExtArgs>[]
       UserPomadoro: Prisma.$UserPomodoroPayload<ExtArgs>[]
       TimeBlock: Prisma.$TimeBlockPayload<ExtArgs>[]
       PomodoroSession: Prisma.$PomodoroSessionPayload<ExtArgs>[]
@@ -1958,7 +1958,7 @@ export namespace Prisma {
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
-    Task<T extends User$TaskArgs<ExtArgs> = {}>(args?: Subset<T, User$TaskArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, 'findMany'> | Null>;
+    tasks<T extends User$tasksArgs<ExtArgs> = {}>(args?: Subset<T, User$tasksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, 'findMany'> | Null>;
 
     UserPomadoro<T extends User$UserPomadoroArgs<ExtArgs> = {}>(args?: Subset<T, User$UserPomadoroArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPomodoroPayload<ExtArgs>, T, 'findMany'> | Null>;
 
@@ -2312,9 +2312,9 @@ export namespace Prisma {
 
 
   /**
-   * User.Task
+   * User.tasks
    */
-  export type User$TaskArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$tasksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Task
      */
@@ -7439,7 +7439,7 @@ export namespace Prisma {
     email?: StringFilter<"User"> | string
     name?: StringNullableFilter<"User"> | string | null
     password?: StringFilter<"User"> | string
-    Task?: TaskListRelationFilter
+    tasks?: TaskListRelationFilter
     UserPomadoro?: UserPomodoroListRelationFilter
     TimeBlock?: TimeBlockListRelationFilter
     PomodoroSession?: PomodoroSessionListRelationFilter
@@ -7452,7 +7452,7 @@ export namespace Prisma {
     email?: SortOrder
     name?: SortOrderInput | SortOrder
     password?: SortOrder
-    Task?: TaskOrderByRelationAggregateInput
+    tasks?: TaskOrderByRelationAggregateInput
     UserPomadoro?: UserPomodoroOrderByRelationAggregateInput
     TimeBlock?: TimeBlockOrderByRelationAggregateInput
     PomodoroSession?: PomodoroSessionOrderByRelationAggregateInput
@@ -7468,7 +7468,7 @@ export namespace Prisma {
     updateAt?: DateTimeFilter<"User"> | Date | string
     name?: StringNullableFilter<"User"> | string | null
     password?: StringFilter<"User"> | string
-    Task?: TaskListRelationFilter
+    tasks?: TaskListRelationFilter
     UserPomadoro?: UserPomodoroListRelationFilter
     TimeBlock?: TimeBlockListRelationFilter
     PomodoroSession?: PomodoroSessionListRelationFilter
@@ -7829,7 +7829,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    Task?: TaskCreateNestedManyWithoutUserInput
+    tasks?: TaskCreateNestedManyWithoutUserInput
     UserPomadoro?: UserPomodoroCreateNestedManyWithoutUserInput
     TimeBlock?: TimeBlockCreateNestedManyWithoutUserInput
     PomodoroSession?: PomodoroSessionCreateNestedManyWithoutUserInput
@@ -7842,7 +7842,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    Task?: TaskUncheckedCreateNestedManyWithoutUserInput
+    tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
     UserPomadoro?: UserPomodoroUncheckedCreateNestedManyWithoutUserInput
     TimeBlock?: TimeBlockUncheckedCreateNestedManyWithoutUserInput
     PomodoroSession?: PomodoroSessionUncheckedCreateNestedManyWithoutUserInput
@@ -7855,7 +7855,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    Task?: TaskUpdateManyWithoutUserNestedInput
+    tasks?: TaskUpdateManyWithoutUserNestedInput
     UserPomadoro?: UserPomodoroUpdateManyWithoutUserNestedInput
     TimeBlock?: TimeBlockUpdateManyWithoutUserNestedInput
     PomodoroSession?: PomodoroSessionUpdateManyWithoutUserNestedInput
@@ -7868,7 +7868,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    Task?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
     UserPomadoro?: UserPomodoroUncheckedUpdateManyWithoutUserNestedInput
     TimeBlock?: TimeBlockUncheckedUpdateManyWithoutUserNestedInput
     PomodoroSession?: PomodoroSessionUncheckedUpdateManyWithoutUserNestedInput
@@ -7977,7 +7977,7 @@ export namespace Prisma {
     name: string
     priority?: $Enums.Priority | null
     isCompleted?: boolean | null
-    user: UserCreateNestedOneWithoutTaskInput
+    user: UserCreateNestedOneWithoutTasksInput
   }
 
   export type TaskUncheckedCreateInput = {
@@ -7997,7 +7997,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     priority?: NullableEnumPriorityFieldUpdateOperationsInput | $Enums.Priority | null
     isCompleted?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    user?: UserUpdateOneRequiredWithoutTaskNestedInput
+    user?: UserUpdateOneRequiredWithoutTasksNestedInput
   }
 
   export type TaskUncheckedUpdateInput = {
@@ -8879,9 +8879,9 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutUserPomadoroInput, UserUpdateWithoutUserPomadoroInput>, UserUncheckedUpdateWithoutUserPomadoroInput>
   }
 
-  export type UserCreateNestedOneWithoutTaskInput = {
-    create?: XOR<UserCreateWithoutTaskInput, UserUncheckedCreateWithoutTaskInput>
-    connectOrCreate?: UserCreateOrConnectWithoutTaskInput
+  export type UserCreateNestedOneWithoutTasksInput = {
+    create?: XOR<UserCreateWithoutTasksInput, UserUncheckedCreateWithoutTasksInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTasksInput
     connect?: UserWhereUniqueInput
   }
 
@@ -8893,12 +8893,12 @@ export namespace Prisma {
     set?: boolean | null
   }
 
-  export type UserUpdateOneRequiredWithoutTaskNestedInput = {
-    create?: XOR<UserCreateWithoutTaskInput, UserUncheckedCreateWithoutTaskInput>
-    connectOrCreate?: UserCreateOrConnectWithoutTaskInput
-    upsert?: UserUpsertWithoutTaskInput
+  export type UserUpdateOneRequiredWithoutTasksNestedInput = {
+    create?: XOR<UserCreateWithoutTasksInput, UserUncheckedCreateWithoutTasksInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTasksInput
+    upsert?: UserUpsertWithoutTasksInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutTaskInput, UserUpdateWithoutTaskInput>, UserUncheckedUpdateWithoutTaskInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutTasksInput, UserUpdateWithoutTasksInput>, UserUncheckedUpdateWithoutTasksInput>
   }
 
   export type UserCreateNestedOneWithoutTimeBlockInput = {
@@ -9420,7 +9420,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    Task?: TaskCreateNestedManyWithoutUserInput
+    tasks?: TaskCreateNestedManyWithoutUserInput
     TimeBlock?: TimeBlockCreateNestedManyWithoutUserInput
     PomodoroSession?: PomodoroSessionCreateNestedManyWithoutUserInput
   }
@@ -9432,7 +9432,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    Task?: TaskUncheckedCreateNestedManyWithoutUserInput
+    tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
     TimeBlock?: TimeBlockUncheckedCreateNestedManyWithoutUserInput
     PomodoroSession?: PomodoroSessionUncheckedCreateNestedManyWithoutUserInput
   }
@@ -9460,7 +9460,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    Task?: TaskUpdateManyWithoutUserNestedInput
+    tasks?: TaskUpdateManyWithoutUserNestedInput
     TimeBlock?: TimeBlockUpdateManyWithoutUserNestedInput
     PomodoroSession?: PomodoroSessionUpdateManyWithoutUserNestedInput
   }
@@ -9472,12 +9472,12 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    Task?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
     TimeBlock?: TimeBlockUncheckedUpdateManyWithoutUserNestedInput
     PomodoroSession?: PomodoroSessionUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type UserCreateWithoutTaskInput = {
+  export type UserCreateWithoutTasksInput = {
     id?: string
     createdAt?: Date | string
     updateAt?: Date | string
@@ -9489,7 +9489,7 @@ export namespace Prisma {
     PomodoroSession?: PomodoroSessionCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutTaskInput = {
+  export type UserUncheckedCreateWithoutTasksInput = {
     id?: string
     createdAt?: Date | string
     updateAt?: Date | string
@@ -9501,23 +9501,23 @@ export namespace Prisma {
     PomodoroSession?: PomodoroSessionUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutTaskInput = {
+  export type UserCreateOrConnectWithoutTasksInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutTaskInput, UserUncheckedCreateWithoutTaskInput>
+    create: XOR<UserCreateWithoutTasksInput, UserUncheckedCreateWithoutTasksInput>
   }
 
-  export type UserUpsertWithoutTaskInput = {
-    update: XOR<UserUpdateWithoutTaskInput, UserUncheckedUpdateWithoutTaskInput>
-    create: XOR<UserCreateWithoutTaskInput, UserUncheckedCreateWithoutTaskInput>
+  export type UserUpsertWithoutTasksInput = {
+    update: XOR<UserUpdateWithoutTasksInput, UserUncheckedUpdateWithoutTasksInput>
+    create: XOR<UserCreateWithoutTasksInput, UserUncheckedCreateWithoutTasksInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutTaskInput = {
+  export type UserUpdateToOneWithWhereWithoutTasksInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutTaskInput, UserUncheckedUpdateWithoutTaskInput>
+    data: XOR<UserUpdateWithoutTasksInput, UserUncheckedUpdateWithoutTasksInput>
   }
 
-  export type UserUpdateWithoutTaskInput = {
+  export type UserUpdateWithoutTasksInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9529,7 +9529,7 @@ export namespace Prisma {
     PomodoroSession?: PomodoroSessionUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutTaskInput = {
+  export type UserUncheckedUpdateWithoutTasksInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9548,7 +9548,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    Task?: TaskCreateNestedManyWithoutUserInput
+    tasks?: TaskCreateNestedManyWithoutUserInput
     UserPomadoro?: UserPomodoroCreateNestedManyWithoutUserInput
     PomodoroSession?: PomodoroSessionCreateNestedManyWithoutUserInput
   }
@@ -9560,7 +9560,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    Task?: TaskUncheckedCreateNestedManyWithoutUserInput
+    tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
     UserPomadoro?: UserPomodoroUncheckedCreateNestedManyWithoutUserInput
     PomodoroSession?: PomodoroSessionUncheckedCreateNestedManyWithoutUserInput
   }
@@ -9588,7 +9588,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    Task?: TaskUpdateManyWithoutUserNestedInput
+    tasks?: TaskUpdateManyWithoutUserNestedInput
     UserPomadoro?: UserPomodoroUpdateManyWithoutUserNestedInput
     PomodoroSession?: PomodoroSessionUpdateManyWithoutUserNestedInput
   }
@@ -9600,7 +9600,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    Task?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
     UserPomadoro?: UserPomodoroUncheckedUpdateManyWithoutUserNestedInput
     PomodoroSession?: PomodoroSessionUncheckedUpdateManyWithoutUserNestedInput
   }
@@ -9612,7 +9612,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    Task?: TaskCreateNestedManyWithoutUserInput
+    tasks?: TaskCreateNestedManyWithoutUserInput
     UserPomadoro?: UserPomodoroCreateNestedManyWithoutUserInput
     TimeBlock?: TimeBlockCreateNestedManyWithoutUserInput
   }
@@ -9624,7 +9624,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    Task?: TaskUncheckedCreateNestedManyWithoutUserInput
+    tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
     UserPomadoro?: UserPomodoroUncheckedCreateNestedManyWithoutUserInput
     TimeBlock?: TimeBlockUncheckedCreateNestedManyWithoutUserInput
   }
@@ -9678,7 +9678,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    Task?: TaskUpdateManyWithoutUserNestedInput
+    tasks?: TaskUpdateManyWithoutUserNestedInput
     UserPomadoro?: UserPomodoroUpdateManyWithoutUserNestedInput
     TimeBlock?: TimeBlockUpdateManyWithoutUserNestedInput
   }
@@ -9690,7 +9690,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    Task?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
     UserPomadoro?: UserPomodoroUncheckedUpdateManyWithoutUserNestedInput
     TimeBlock?: TimeBlockUncheckedUpdateManyWithoutUserNestedInput
   }
