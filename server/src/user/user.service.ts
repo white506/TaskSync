@@ -16,7 +16,8 @@ export class UserService {
 				id,
 			},
 			include: {
-				Task: true,
+				tasks: true,
+				UserPomadoro: true,
 			},
 		})
 	}
@@ -24,7 +25,7 @@ export class UserService {
 	async getProfile(id: string) {
 		const profile = await this.getById(id)
 
-		const totalTasks = profile.Task.length
+		const totalTasks = profile.tasks.length
 		const completedTasks = await this.prisma.task.count({
 			where: {
 				userId: id,
@@ -86,7 +87,7 @@ export class UserService {
 		})
 	}
 
-	async uodate(id: string, dto: UserDto) {
+	async update(id: string, dto: UserDto) {
 		let data = dto
 
 		if (dto.password) {
@@ -98,6 +99,10 @@ export class UserService {
 				id,
 			},
 			data,
+			select: {
+				name: true,
+				email: true,
+			}
 		})
 	}
 }
