@@ -8,6 +8,4 @@ import { TimeBlockService } from "./time-block.service"
 	providers: [TimeBlockService, PrismaService],
 	exports: [TimeBlockService],
 })
-export class TimeBlockModule {
-
-}
+export class TimeBlockModule {}
