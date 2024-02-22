@@ -17,7 +17,6 @@ export class UserService {
 			},
 			include: {
 				tasks: true,
-				UserPomadoro: true,
 			},
 		})
 	}
@@ -102,7 +101,7 @@ export class UserService {
 			select: {
 				name: true,
 				email: true,
-			}
+			},
 		})
 	}
 }

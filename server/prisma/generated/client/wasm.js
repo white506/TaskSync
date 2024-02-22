@@ -113,17 +113,10 @@ exports.Prisma.UserScalarFieldEnum = {
   updateAt: 'updateAt',
   email: 'email',
   name: 'name',
-  password: 'password'
-};
-
-exports.Prisma.UserPomodoroScalarFieldEnum = {
-  id: 'id',
-  createdAt: 'createdAt',
-  updateAt: 'updateAt',
+  password: 'password',
   workInterval: 'workInterval',
   breakInterval: 'breakInterval',
-  intervalCount: 'intervalCount',
-  userId: 'userId'
+  intervalsCount: 'intervalsCount'
 };
 
 exports.Prisma.TaskScalarFieldEnum = {
@@ -186,7 +179,6 @@ exports.Priority = exports.$Enums.Priority = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  UserPomodoro: 'UserPomodoro',
   Task: 'Task',
   TimeBlock: 'TimeBlock',
   PomodoroSession: 'PomodoroSession',

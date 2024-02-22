@@ -19,28 +19,29 @@ model User {
   name     String?
   password String
 
+  workInterval  Int? @default(50) @map("work_interval")
+  breakInterval Int? @default(10) @map("break_interval")
+  intervalsCount Int? @default(7) @map("intervals_count")
+
   tasks            Task[]
-  UserPomadoro    UserPomodoro[]
   TimeBlock       TimeBlock[]
   PomodoroSession PomodoroSession[]
 
   @@map("user")
 }
 
-model UserPomodoro {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now()) @map("created_at")
-  updateAt  DateTime @updatedAt @map("update_at")
+// model UserPomodoro {
+//   id        String   @id @default(cuid())
+//   createdAt DateTime @default(now()) @map("created_at")
+//   updateAt  DateTime @updatedAt @map("update_at")
 
-  workInterval  Int? @default(50) @map("work_interval")
-  breakInterval Int? @default(10) @map("break_interval")
-  intervalCount Int? @default(7) @map("interval_count")
 
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @map("user_id")
 
-  @@map("user_pomodoro")
-}
+//   user   User   @relation(fields: [userId], references: [id])
+//   userId String @map("user_id")
+
+//   @@map("user_pomodoro")
+// }
 
 model Task {
   id        String   @id @default(cuid())

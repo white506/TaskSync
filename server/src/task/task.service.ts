@@ -21,9 +21,9 @@ export class TaskService {
 				user: {
 					connect: {
 						id: userId,
-					}
-				}
-			}
+					},
+				},
+			},
 		})
 	}
 
@@ -31,17 +31,17 @@ export class TaskService {
 		return this.prisma.task.update({
 			where: {
 				userId,
-				id: taskId
+				id: taskId,
 			},
-			data: dto
+			data: dto,
 		})
 	}
 
 	async delete(taskId: string) {
 		return this.prisma.task.delete({
-			where:{
-				id: taskId
-			}
+			where: {
+				id: taskId,
+			},
 		})
 	}
 }
