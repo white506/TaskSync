@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
+import { Toaster } from 'sonner'
 
 import { SITE_NAME } from '@/constants/seo.constants'
 
 import './globals.scss'
 import { Providers } from './providers'
-import { Toaster } from 'sonner'
 
 const zen = Noto_Sans({
 	subsets: ['cyrillic', 'latin'],
